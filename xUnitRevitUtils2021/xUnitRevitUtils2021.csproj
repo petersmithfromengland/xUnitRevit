@@ -17,6 +17,7 @@
     <PackageId>xUnitRevitUtils.2021</PackageId>
     <Version>1.0.4</Version>
     <AssemblyVersion>1.0.4.0</AssemblyVersion>
+    <Configurations>Debug;Release;Release2022;Debug2023</Configurations>
   </PropertyGroup>
 
   <ItemGroup>

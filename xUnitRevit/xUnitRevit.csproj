@@ -21,6 +21,30 @@
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <!-- MULTI VERSION CONFIGURATION START -->
+  <!--2022-->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug2022|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <StartAction>Program</StartAction>
+    <StartProgram>$(ProgramW6432)\Autodesk\Revit 2022\Revit.exe</StartProgram>
+    <RevitVersion>2022</RevitVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release2022|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <StartAction>Program</StartAction>
+    <StartProgram>$(ProgramW6432)\Autodesk\Revit 2022\Revit.exe</StartProgram>
+    <RevitVersion>2022</RevitVersion>
+  </PropertyGroup>
   <!--2021-->
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug2021|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,7 +64,7 @@
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <WarningLevel>0</WarningLevel>
     <StartAction>Program</StartAction>
     <StartProgram>$(ProgramW6432)\Autodesk\Revit 2021\Revit.exe</StartProgram>
     <RevitVersion>2021</RevitVersion>
@@ -92,6 +116,37 @@
     <StartAction>Program</StartAction>
     <StartProgram>$(ProgramW6432)\Autodesk\Revit 2019\Revit.exe</StartProgram>
     <RevitVersion>2019</RevitVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug2022|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release2022|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug2023|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug2023\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release2023|AnyCPU'">
+    <OutputPath>bin\Release2023\</OutputPath>
   </PropertyGroup>
   <!--END-->
   <ItemGroup>
@@ -174,6 +229,20 @@
     <PackageReference Include="speckle.xunit.runner.wpf">
       <Version>1.0.9</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\xUnitRevitUtils2019\xUnitRevitUtils2019.csproj">
+      <Project>{02399359-9ca0-4b47-b467-541e290e700f}</Project>
+      <Name>xUnitRevitUtils2019</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\xUnitRevitUtils2020\xUnitRevitUtils2020.csproj">
+      <Project>{0def0f23-8ae2-461b-b014-8a0da7494088}</Project>
+      <Name>xUnitRevitUtils2020</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\xUnitRevitUtils2022\xUnitRevitUtils2022.csproj">
+      <Project>{919699a5-2457-489b-9c57-854e77777528}</Project>
+      <Name>xUnitRevitUtils2022</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
